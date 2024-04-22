@@ -1,61 +1,117 @@
 html,
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
 }
 
 header {
     height: 170px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
 }
 
-.logo {
+header div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    font-family: "Noto Serif", serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.change-mode {
+    animation: expanding 4s infinite;
+    font-size: 20px;
+}
+
+@keyframes expanding {
+    from {
+        font-weight: 200;
+    }
+
+    50% {
+        font-weight: 900;
+    }
+
+    to {
+        font-weight: 200;
+    }
+}
+
+header p:hover {
+    color: darkblue;
+    cursor: pointer;
+}
+
+header div:last-child p:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 4px;
+}
+
+#logo {
     font-family: "Abril Fatface", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 90px;
-    margin-top: 30px;
+    font-size: 70px;
+    cursor: pointer;
 }
 
 .container {
     width: 100vw;
     height: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.proj {
+.slider {
     text-align: center;
+    margin-bottom: 80px;
+    position: relative;
 }
 
-.proj h2 {
-    position: relative;
-    font-size: 60px;
-    color: white;
+.slider:last-child {
     margin: 0;
-    top: 250px;
+}
+
+.slider h2 {
+    position: absolute;
+    font-family: "Anton", sans-serif;
+    font-size: 90px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0;
+    top: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     z-index: 2;
 }
 
-.slider {
+.images {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0px;
+    transition: opacity 1s ease;
 }
 
-.slider:hover {
+.slider:hover .images{
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.7;
     animation-name: autoSlide;
     animation-duration: 10S;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.slider:hover h2 {
+    opacity: 1;
 }
 
 @keyframes autoSlide {
@@ -72,7 +128,104 @@ header {
     }
 }
 
-img {
+.container .slider img {
     height: 400px;
     margin-right: 33px;
+}
+
+.contact {
+    height: 66vh;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact img {
+    height: 400px;
+    margin-right: 40px;
+}
+
+.contact .profile {
+    height: 400px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact .profile .name {
+    font-size: 30px;
+    font-family: "Noto Serif", serif;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.contact .profile .info {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact .profile .info p {
+    margin: 0;
+    margin-right: 20px;
+    font-family: "Noto Serif", serif;
+    font-size: 18px;
+}
+
+.contact .profile .info .icon-info .email {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact .profile .info .icon-info .email .alert-message {
+    position: absolute;
+}
+
+.contact .profile .info .icon,
+.contact .profile .info .icon-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 2em;
+}
+
+.contact .profile .info .icon p {
+    font-weight: 600;
+}
+
+.contact .profile .info .icon-info span {
+    font-size: 13px;
+    font-weight: bolder;
+    margin-left: 10px;
+    color: red;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#hover-text, 
+#change-text {
+    position: absolute;
+    margin-left: 180px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact .profile .info .icon-info p:hover {
+    cursor: pointer;
+    color: darkblue;
+    text-decoration-line: underline;
+    text-decoration-thickness: 6px;
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif", serif;
+    font-size: 13px;
+    color: rgb(116, 116, 116);
 }

@@ -8,18 +8,28 @@
     <title>Photo Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gaegu:wght@300&family=Neucha&family=Potta+One&family=Yomogi&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gaegu:wght@300&family=Neucha&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Potta+One&family=Yomogi&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gaegu:wght@300&family=Gowun+Dodum&family=Neucha&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Potta+One&family=Yomogi&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Gaegu:wght@300&family=Gowun+Dodum&family=Neucha&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Potta+One&family=Yomogi&display=swap');
     </style>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">Photo Portfolio</h1>
+        <div>
+            <p class="change-mode">Change Mode</p>
+        </div>
+        <h1 id="logo">Photo Portfolio</h1>
+        <div>
+            <p id="menu-button">menu</p>
+            <p id="contact-button">contact</p>
+        </div>
     </header>
-    
-    <div class="container">
-        <div class="proj">
+
+    <div class="container" id="main-container">
+        <div class="slider">
             <h2>proj 1</h2>
-            <div class="slider">
+            <div class="images">
                 <img src="./imgs/1.jpg" alt="">
                 <img src="./imgs/2.jpg" alt="">
                 <img src="./imgs/3.jpg" alt="">
@@ -29,9 +39,9 @@
             </div>
         </div>
 
-        <div class="proj">
+        <div class="slider">
             <h2>proj 2</h2>
-            <div class="slider">
+            <div class="images">
                 <img src="./imgs/5.jpg" alt="">
                 <img src="./imgs/6.jpg" alt="">
                 <img src="./imgs/7.jpg" alt="">
@@ -42,9 +52,9 @@
             </div>
         </div>
 
-        <div class="proj">
+        <div class="slider">
             <h2>proj 3</h2>
-            <div class="slider">
+            <div class="images">
                 <img src="./imgs/10.jpg" alt="">
                 <img src="./imgs/11.jpg" alt="">
                 <img src="./imgs/12.jpg" alt="">
@@ -54,9 +64,9 @@
             </div>
         </div>
 
-        <div class="proj">
+        <div class="slider">
             <h2>proj 4</h2>
-            <div class="slider">
+            <div class="images">
                 <img src="./imgs/13.jpg" alt="">
                 <img src="./imgs/14.jpg" alt="">
                 <img src="./imgs/16.jpg" alt="">
@@ -68,8 +78,42 @@
         </div>
     </div>
 
-    <footer>
+    <div class="contact" id="contact-container">
+        <img src="./imgs/20.jpg" alt="">
 
+        <div class="profile">
+            <div class="name-info">
+                <div class="name">조희수 Cho Heesu</div>
+                <div class="info">
+                    <div class="icon">
+                        <p>E-mail</p>
+                        <p>Instagram</p>
+                    </div>
+                    <div class="icon-info">
+                        <div class="email">
+                            <p id="text">abcdef@naver.com</p>
+                            <span id="hover-text">click to copy !</span>
+                            <span id="change-text">copy success !</span>
+                        </div>
+                        <p><a href="https://www.instagram.com/_useeh/">@_useeh</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="write">
+                <span>글쓰기<br>
+                    글쓰기<br>
+                    글쓰기<br>
+                    글쓰기<br>
+                    글쓰기<br>
+                    글쓰기<br>
+                    글쓰기<br></span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright 2024. (name) All pictures cannot be copied without permission.</p>
     </footer>
 </body>
 <script src="./index.js"></script>
