@@ -8,26 +8,59 @@ header {
     height: 170px;
     width: 100vw;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 2;
+    justify-content: space-around;
+    text-align: center;
 }
 
-header div {
-    display: flex;
-    justify-content: space-evenly;
-    width: 20%;
+#logo {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+/* #contact-button {
     font-family: "Noto Serif", serif;
     font-size: 17px;
     font-weight: 400;
+} */
+
+.menu-icon {
+    position: absolute;
+    top: 85px;
+    left: 85px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.change-mode {
+.menu-global {
+    backface-visibility: hidden;
+    position: absolute;
+    border-top: 3px solid black;
+    width: 100%;
+}
+
+.menu-top {
+    transform: translateY(-10px);
+}
+
+.menu-bottom {
+    transform: translateY(10px);
+}
+
+/* .change-mode {
     animation: expanding 4s infinite;
     font-size: 20px;
-}
+} */
 
-@keyframes expanding {
+/* @keyframes expanding {
     from {
         font-weight: 200;
     }
@@ -39,25 +72,8 @@ header div {
     to {
         font-weight: 200;
     }
-}
+} */
 
-header p:hover {
-    color: darkblue;
-    cursor: pointer;
-}
-
-header div:last-child p:hover {
-    text-decoration-line: underline;
-    text-decoration-thickness: 4px;
-}
-
-#logo {
-    font-family: "Abril Fatface", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 70px;
-    cursor: pointer;
-}
 
 .container {
     width: 100vw;
@@ -101,7 +117,7 @@ header div:last-child p:hover {
     transition: opacity 1s ease;
 }
 
-.slider:hover .images{
+.slider:hover .images {
     cursor: pointer;
     opacity: 0.7;
     animation-name: autoSlide;
@@ -133,7 +149,7 @@ header div:last-child p:hover {
     margin-right: 33px;
 }
 
-.contact {
+/* .contact {
     height: 66vh;
     display: none;
     flex-direction: row;
@@ -202,7 +218,7 @@ header div:last-child p:hover {
     transition: opacity 0.3s ease;
 }
 
-#hover-text, 
+#hover-text,
 #change-text {
     position: absolute;
     margin-left: 180px;
@@ -218,6 +234,41 @@ a {
     color: darkblue;
     text-decoration-line: underline;
     text-decoration-thickness: 6px;
+} */
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+
+.menu p {
+    margin: 15px;
+    font-size: 60px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 200;
+    transform: translateX(-200%); 
+    transition: transform 0.5s ease;
+}
+
+.menu p.animate {
+    transform: translateX(0%); /* 종료 위치를 화면 안으로 설정 */
+}
+
+.menu img {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transform: translateY(-200%); 
+    transition: transform 0.8s ease;
+}
+
+.menu img.animate {
+    transform: translateY(0%); /* 종료 위치를 화면 안으로 설정 */
 }
 
 footer {
