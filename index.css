@@ -4,6 +4,11 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header {
     height: 170px;
     width: 100vw;
@@ -224,17 +229,13 @@ header {
     margin-left: 180px;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .contact .profile .info .icon-info p:hover {
     cursor: pointer;
     color: darkblue;
     text-decoration-line: underline;
     text-decoration-thickness: 6px;
 } */
+
 
 .menu {
     display: none;
@@ -248,14 +249,18 @@ a {
     margin: 15px;
     font-size: 60px;
     font-family: "Playfair Display", serif;
-    font-style: italic;
     font-weight: 200;
-    transform: translateX(-200%); 
+    transform: translateX(-250%); 
     transition: transform 0.5s ease;
 }
 
 .menu p.animate {
-    transform: translateX(0%); /* 종료 위치를 화면 안으로 설정 */
+    transform: translateX(0%);
+}
+
+.menu p:hover {
+    color: darkkhaki;
+    mix-blend-mode: difference;
 }
 
 .menu img {
@@ -268,7 +273,29 @@ a {
 }
 
 .menu img.animate {
-    transform: translateY(0%); /* 종료 위치를 화면 안으로 설정 */
+    transform: translateY(0%); 
+} 
+
+.effect-underline:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    height: 1em;
+    width: 100%;
+    border-bottom: 2px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 footer {
