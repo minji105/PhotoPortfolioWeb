@@ -46,6 +46,9 @@ const menu_bottom = document.getElementsByClassName('menu-bottom')[0];
 const menuItems = document.querySelectorAll('#menu-container p');
 const menuImg = document.getElementById('menu-img');
 
+const instaPath = document.querySelector('.insta svg path');
+const insta = document.querySelector('.insta svg');
+
 let isOpen = false
 
 menuIcon.addEventListener('click', function () {
@@ -65,6 +68,16 @@ menuIcon.addEventListener('click', function () {
 
         mainContainer.style.opacity = '0';
         mainContainer.style.transition = 'opacity 0.5s ease-in-out';
+
+        instaPath.style.fill = 'white';
+        instaPath.style.transition = 'all 0.3s ease';
+
+        insta.addEventListener('mouseover', function () {
+            instaPath.style.fill = 'url(#gradient)';
+        });
+        insta.addEventListener('mouseout', function () {
+            instaPath.style.fill = 'white';
+        });
 
         setTimeout(() => {
             menuContainer.style.display = 'flex';
@@ -107,6 +120,15 @@ menuIcon.addEventListener('click', function () {
                 menuContainer.style.display = 'none';
                 mainContainer.style.display = 'flex';
                 footerContainer.style.display = 'flex';
+
+                instaPath.style.fill = 'black';
+
+                insta.addEventListener('mouseover', function () {
+                    instaPath.style.fill = 'url(#gradient)';
+                });
+                insta.addEventListener('mouseout', function () {
+                    instaPath.style.fill = 'black';
+                });
             }, 500);
 
             menuImg.classList.remove('animate');

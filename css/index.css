@@ -11,7 +11,7 @@ a {
 }
 
 header {
-    height: 170px;
+    height: 190px;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -58,8 +58,8 @@ header {
 
 
 .container {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 12%;
+    margin-right: 12%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -80,11 +80,11 @@ header {
 .slider h2 {
     position: absolute;
     font-family: "Anton", sans-serif;
-    font-size: 90px;
+    font-size: 80px;
     color: rgb(0, 0, 0);
     text-align: center;
     margin: 0;
-    top: 150px;
+    top: 145px;
     left: 50%;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
@@ -130,7 +130,7 @@ header {
 }
 
 .container .slider img {
-    height: 300px;
+    height: 290px;
     margin-right: 33px;
 }
 
@@ -217,73 +217,5 @@ header {
 } */
 
 
-.menu {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 10%;
-    margin-top: 8%;
-}
 
-.menu p {
-    margin: 15px;
-    font-size: 60px;
-    font-family: "Playfair Display", serif;
-    font-weight: 200;
-    transform: translateX(-250%); 
-    transition: transform 0.5s ease;
-}
 
-.menu p.animate {
-    transform: translateX(0%);
-}
-
-.menu p:hover {
-    color: darkkhaki;
-    mix-blend-mode: difference;
-}
-
-.menu img {
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    transform: translateY(-200%); 
-    transition: transform 0.8s ease;
-}
-
-.menu img.animate {
-    transform: translateY(0%); 
-} 
-
-.effect-underline:after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    height: 1em;
-    width: 100%;
-    border-bottom: 2px solid;
-    margin-top: 10px;
-    opacity: 0;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: scale(0, 1);
-    transform: scale(0, 1);
-}
-
-.effect-underline:hover:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-}
-
-footer {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Noto Serif", serif;
-    font-size: 13px;
-    color: rgb(116, 116, 116);
-}

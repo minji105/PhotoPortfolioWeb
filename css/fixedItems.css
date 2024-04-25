@@ -1,6 +1,6 @@
 .menu-icon {
     position: fixed;
-    top: 85px;
+    top: 95px;
     left: 70px;
     transform: translate(50%, -50%);
     width: 30px;
@@ -16,17 +16,78 @@
     width: 100%;
 }
 
-.menu-top {
+/* .menu-top {
     transform: translateY(-10px);
 }
 
 .menu-bottom {
     transform: translateY(10px);
+} */
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+
+.menu p {
+    margin: 15px;
+    font-size: 60px;
+    font-family: "Playfair Display", serif;
+    font-weight: 200;
+    transform: translateX(-250%); 
+    transition: transform 0.5s ease;
+}
+
+.menu p.animate {
+    transform: translateX(0%);
+}
+
+.menu p:hover {
+    color: darkkhaki;
+    mix-blend-mode: difference;
+}
+
+.menu img {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transform: translateY(-200%); 
+    transition: transform 0.8s ease;
+}
+
+.menu img.animate {
+    transform: translateY(0%); 
+} 
+
+.effect-underline:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    height: 1em;
+    width: 100%;
+    border-bottom: 2px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .insta {
     position: fixed;
-    top: 85px;
+    top: 95px;
     right: 70px;
     transform: translate(-50%, -50%);
     width: 35px;
@@ -74,7 +135,7 @@
     text-align: center;
     line-height: 46px;
     font-size: 24px;
-    color: rosybrown;
+    color: rgb(210, 180, 180);
     text-shadow:
         -0.3px -0.3px 0 #dbcccc,
         0.3px -0.3px 0 #fff,
@@ -103,7 +164,7 @@
     line-height: 46px;
     font-size: 24px;
     opacity: 0;
-    background-color: rgb(210, 180, 180);
+    background-color: rosybrown;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     left: 0;
@@ -143,4 +204,14 @@
     pointer-events: none;
     transition: transform 0.15s ease;
     transform: scale(1);
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif", serif;
+    font-size: 13px;
+    color: rgb(116, 116, 116);
 }
