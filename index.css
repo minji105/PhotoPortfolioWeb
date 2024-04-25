@@ -1,4 +1,5 @@
-html,
+@import url('https://unicons.iconscout.com/release/v4.0.0/css/unicons.css');
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -34,31 +35,7 @@ header {
     font-weight: 400;
 } */
 
-.menu-icon {
-    position: absolute;
-    top: 85px;
-    left: 85px;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    z-index: 2;
-}
 
-.menu-global {
-    backface-visibility: hidden;
-    position: absolute;
-    border-top: 3px solid black;
-    width: 100%;
-}
-
-.menu-top {
-    transform: translateY(-10px);
-}
-
-.menu-bottom {
-    transform: translateY(10px);
-}
 
 /* .change-mode {
     animation: expanding 4s infinite;
@@ -81,17 +58,19 @@ header {
 
 
 .container {
-    width: 100vw;
+    margin-left: 10%;
+    margin-right: 10%;
     height: auto;
-    position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .slider {
+    position: relative;
     text-align: center;
     margin-bottom: 80px;
     position: relative;
+    overflow: hidden;
 }
 
 .slider:last-child {
@@ -105,12 +84,13 @@ header {
     color: rgb(0, 0, 0);
     text-align: center;
     margin: 0;
-    top: 200px;
+    top: 150px;
     left: 50%;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
     z-index: 2;
 }
 
@@ -150,7 +130,7 @@ header {
 }
 
 .container .slider img {
-    height: 400px;
+    height: 300px;
     margin-right: 33px;
 }
 
