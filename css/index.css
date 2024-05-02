@@ -67,16 +67,59 @@ a {
     height: 100vh;
 }
 
-.intro .text {
+.intro .shutter-effect {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    animation: shutter 1.5s forwards;
+    z-index: 1;
+}
+
+@keyframes shutter {
+    0% {
+        opacity: 0.5;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.intro .text {
+    position: fixed;
     color: #fff;
     mix-blend-mode: difference;
     bottom: 3%;
     left: 20px;
     font-weight: 900;
-    animation: moveUpName 2s ease forwards;
-    animation-delay: 1s;
+    font-size: 20px;
+    animation: moveUpName 1.5s ease forwards;
+    animation-delay: 1.5s;
     z-index: 1;
+}
+
+@keyframes moveUpName {
+    from {
+        bottom: 3%;
+    }
+
+    to {
+        bottom: 64%;
+    }
+}
+
+.intro .text #name {
+    font-size: 12vh;
 }
 
 section {
@@ -136,23 +179,10 @@ section {
     will-change: transform;
 }
 
-@keyframes moveUpName {
-    from {
-        bottom: 3%;
-    }
-
-    to {
-        bottom: 64.5%;
-    }
-}
-
-.intro .text #name {
-    font-size: 12vh;
-}
-
 .intro .bottom-bar {
     color: #fff;
-    position: absolute;
+    mix-blend-mode: difference;
+    position: fixed;
     bottom: -10%;
     left: 50%;
     transform: translateX(-50%);
@@ -160,8 +190,8 @@ section {
     display: flex;
     justify-content: space-between;
     width: 95vw;
-    animation: moveUpBottomBar 2s ease forwards;
-    animation-delay: 1s;
+    animation: moveUpBottomBar 1.5s ease forwards;
+    animation-delay: 1.5s;
 }
 
 @keyframes moveUpBottomBar {
@@ -183,22 +213,11 @@ section {
 .blur {
     backdrop-filter: blur(10px);
     overflow: hidden;
-    filter: blur(13px);
+    filter: blur(10px);
     position: absolute;
     top: -50px;
     left: -50px;
     right: -50px;
     bottom: -50px;
-    display: none;
-}
-
-footer {
-    height: 150px;
-    /* display: flex; */
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-family: "Noto Serif", serif;
-    font-size: 13px;
-    color: rgb(116, 116, 116);
+    opacity: 0;
 }
