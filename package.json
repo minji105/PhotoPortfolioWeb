@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "observer": "^0.0.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

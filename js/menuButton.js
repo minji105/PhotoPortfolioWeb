@@ -32,11 +32,10 @@
 
 
 // menu icon
-const logoButton = document.getElementById('logo');
 
-const mainContainer = document.getElementById('main-container');
 const menuContainer = document.getElementById('menu-container');
-const footerContainer = document.getElementById('footer-container');
+
+const blur_effect=document.getElementsByClassName('blur')[0];
 
 const menuIcon = document.getElementsByClassName('menu-icon')[0];
 const menu_top = document.getElementsByClassName('menu-top')[0];
@@ -46,13 +45,11 @@ const menu_bottom = document.getElementsByClassName('menu-bottom')[0];
 const menuItems = document.querySelectorAll('#menu-container p');
 const menuImg = document.getElementById('menu-img');
 
-const instaPath = document.querySelector('.insta svg path');
-const insta = document.querySelector('.insta svg');
-
 let isOpen = false
 
 menuIcon.addEventListener('click', function () {
     if (!isOpen) {
+
         menu_top.style.transform = 'rotate(45deg)';
         menu_top.style.transition = '0.5s';
 
@@ -62,37 +59,15 @@ menuIcon.addEventListener('click', function () {
         menu_bottom.style.transform = 'rotate(135deg)';
         menu_bottom.style.transition = '0.5s';
 
-        logoButton.style.opacity = '0';
-        logoButton.style.pointerEvents = 'none';
-        logoButton.style.transition = 'all 0.5s ease';
-
-        mainContainer.style.opacity = '0';
-        mainContainer.style.transition = 'opacity 0.5s ease-in-out';
-
-        instaPath.style.fill = 'white';
-        instaPath.style.transition = 'all 0.3s ease';
-
-        insta.addEventListener('mouseover', function () {
-            instaPath.style.fill = 'url(#gradient)';
-        });
-        insta.addEventListener('mouseout', function () {
-            instaPath.style.fill = 'white';
-        });
+        blur_effect.style.display='block';
+        menuContainer.style.display = 'flex';
 
         setTimeout(() => {
-            menuContainer.style.display = 'flex';
-            mainContainer.style.display = 'none';
-            footerContainer.style.display = 'none';
+            menuContainer.classList.add('animate');
 
-            menuItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.add('animate');
-                }, index * 100 + 100);
-            });
+            // mainContainer.style.display = 'none';
+            // footerContainer.style.display = 'none';
 
-            setTimeout(() => {
-                menuImg.classList.add('animate');
-            }, 100);
         }, 300);
 
         isOpen = true; // 열린 상태로 변경
@@ -100,38 +75,19 @@ menuIcon.addEventListener('click', function () {
     } else {
         isOpen = false; // 닫힌 상태로 변경
 
+        menu_top.style.transform = '';
+        menu_middle.style.opacity = '1';
+        menu_bottom.style.transform = '';
+
+        menuContainer.classList.remove('animate');
+
         setTimeout(() => {
-            menu_top.style.transform = '';
-            menu_middle.style.opacity = '1';
-            menu_bottom.style.transform = '';
-
-            mainContainer.style.opacity = '1';
-
-            menuItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.remove('animate');
-                }, (menuItems.length - index - 1) * 100);
-            });
+            blur_effect.style.display='none';
 
             setTimeout(() => {
-                logoButton.style.opacity = '1';
-                logoButton.style.pointerEvents = 'all';
-
                 menuContainer.style.display = 'none';
-                mainContainer.style.display = 'flex';
-                footerContainer.style.display = 'flex';
-
-                instaPath.style.fill = 'black';
-
-                insta.addEventListener('mouseover', function () {
-                    instaPath.style.fill = 'url(#gradient)';
-                });
-                insta.addEventListener('mouseout', function () {
-                    instaPath.style.fill = 'black';
-                });
             }, 500);
 
-            menuImg.classList.remove('animate');
         }, 500);
     }
 })

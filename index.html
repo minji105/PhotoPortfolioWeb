@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/fixedItems.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
     <title>Photo Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gaegu:wght@300&family=Neucha&family=Potta+One&family=Yomogi&display=swap');
@@ -16,142 +19,116 @@
         @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Gaegu:wght@300&family=Gowun+Dodum&family=Neucha&family=Noto+Sans+Symbols+2&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Potta+One&family=Yomogi&display=swap');
 
         .menu-top {
-            transform: translateY(-10px);
+            transform: translateY(-6px);
         }
 
         .menu-bottom {
-            transform: translateY(10px);
+            transform: translateY(6px);
         }
     </style>
 </head>
 
 <body>
-    <div class="cursor"></div>
+    <div class="fixed-items">
+        <div class="cursor"></div>
 
-    <div class="menu-icon">
-        <p class="menu-global menu-top"></p>
-        <p class="menu-global menu-middle"></p>
-        <p class="menu-global menu-bottom"></p>
-    </div>
-
-    <div class="insta">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
-            <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:rgb(235,247,17)" />
-                    <stop offset="100%" style="stop-color:rgb(235,43,206)" />
-                </linearGradient>
-            </defs>
-
-            <path
-                d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"
-                fill="url(#gradient)"></path>
-        </svg>
-    </div>
-
-    <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-
-    <header>
-        <p id="logo">Photo Portfolio</p>
-    </header>
-
-    <div class="container" id="main-container">
-        <div class="slider">
-            <h2><a href="./proj1.html">proj 1</a></h2>
-            <div><a href="./proj1.html" class="images">
-                    <img src="./imgs/1.jpg" alt="">
-                    <img src="./imgs/2.jpg" alt="">
-                    <img src="./imgs/3.jpg" alt="">
-                    <img src="./imgs/4.jpg" alt="">
-                    <img src="./imgs/20.jpg" alt="">
-                    <img src="./imgs/19.jpg" alt="">
-                </a></div>
+        <div class="menu-icon">
+            <p class="menu-global menu-top"></p>
+            <p class="menu-global menu-middle"></p>
+            <p class="menu-global menu-bottom"></p>
         </div>
 
-        <div class="slider">
-            <h2>proj 2</h2>
-            <div class="images">
-                <img src="./imgs/5.jpg" alt="">
-                <img src="./imgs/6.jpg" alt="">
-                <img src="./imgs/7.jpg" alt="">
-                <img src="./imgs/8.jpg" alt="">
-                <img src="./imgs/9.jpg" alt="">
-                <img src="./imgs/17.jpg" alt="">
-                <img src="./imgs/18.jpg" alt="">
-            </div>
+        <div class="contact">
+            <span>Contact</span>
         </div>
+        <!-- 
+            <div class="insta">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgb(235,247,17)" />
+                            <stop offset="100%" style="stop-color:rgb(235,43,206)" />
+                        </linearGradient>
+                    </defs>
 
-        <div class="slider">
-            <h2>proj 3</h2>
-            <div class="images">
-                <img src="./imgs/10.jpg" alt="">
-                <img src="./imgs/11.jpg" alt="">
-                <img src="./imgs/12.jpg" alt="">
-                <img src="./imgs/15.jpg" alt="">
-                <img src="./imgs/1.jpg" alt="">
-                <img src="./imgs/2.jpg" alt="">
-            </div>
-        </div>
+                    <path
+                        d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"
+                        fill="url(#gradient)"></path>
+                </svg>
+            </div> -->
 
-        <div class="slider">
-            <h2>proj 4</h2>
-            <div class="images">
-                <img src="./imgs/13.jpg" alt="">
-                <img src="./imgs/14.jpg" alt="">
-                <img src="./imgs/16.jpg" alt="">
-                <img src="./imgs/17.jpg" alt="">
-                <img src="./imgs/18.jpg" alt="">
-                <img src="./imgs/3.jpg" alt="">
-                <img src="./imgs/4.jpg" alt="">
-            </div>
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
         </div>
     </div>
 
-    <!-- <div class="contact" id="contact-container">
-        <img src="./imgs/20.jpg" alt="">
+    <div class="intro">
+        <div class="text">
+            <span id="photographer">photographer<br></span>
+            <span id="name">CHO<br>HEE SU</span>
+        </div>
 
-        <div class="profile">
-            <div class="name-info">
-                <div class="name">조희수 Cho Heesu</div>
-                <div class="info">
-                    <div class="icon">
-                        <p>E-mail</p>
-                        <p>Instagram</p>
-                    </div>
-                    <div class="icon-info">
-                        <div class="email">
-                            <p id="text">abcdef@naver.com</p>
-                            <span id="hover-text">click to copy !</span>
-                            <span id="change-text">copy success !</span>
-                        </div>
-                        <p><a href="https://www.instagram.com/_useeh/">@_useeh</a></p>
+        <section class="first">
+            <div class="outer">
+                <div class="inner">
+                    <div class="bg one">
                     </div>
                 </div>
             </div>
 
-            <div class="write">
-                <span>글쓰기<br>
-                    글쓰기<br>
-                    글쓰기<br>
-                    글쓰기<br>
-                    글쓰기<br>
-                    글쓰기<br>
-                    글쓰기<br></span>
+        </section>
+        <section class="second">
+            <div class="outer">
+                <div class="inner">
+                    <div class="bg">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div> -->
+        </section>
+        <section class="third">
+            <div class="outer">
+                <div class="inner">
+                    <div class="bg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fourth">
+            <div class="outer">
+                <div class="inner">
+                    <div class="bg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fifth">
+            <div class="outer">
+                <div class="inner">
+                    <div class="bg">
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <div class="bottom-bar">
+            <div>
+                <span class="proj-count"></span>
+                <span class="proj-name"></span>
+                <span class="proj-view">view the project</span>
+            </div>
+            <span class="scroll">scroll</span>
+        </div>
+    </div>
+
+    <div class="blur"></div>
     <div class="menu" id="menu-container">
         <p class="effect-underline"><a href="./proj1.html">PROJ 1</a></p>
         <p class="effect-underline">PROJ 2</p>
         <p class="effect-underline">PROJ 3</p>
         <p class="effect-underline">PROJ 4</p>
-        <p><a href="./contact.html" class="effect-underline">CONTACT</a></p>
-        <img id="menu-img" src="./imgs/menu.jpg" alt="">
+        <p class="effect-underline">CONTACT</p>
     </div>
 
     <footer id="footer-container">
@@ -161,5 +138,7 @@
 <script src="./js/menuButton.js"></script>
 <script src="./js/progress_wrap.js"></script>
 <script src="./js/mouse_follower.js"></script>
+<script src="./js/scroll.js"></script>
+<script type="module" src="./js/intro_images.js"></script>
 
 </html>

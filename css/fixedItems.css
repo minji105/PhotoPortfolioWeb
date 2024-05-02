@@ -1,10 +1,24 @@
-.menu-icon {
+
+
+.contact {
+    color: #fff;
+    font-weight: 900;
     position: fixed;
-    top: 95px;
-    left: 70px;
+    margin: 0;
+    top: 20px;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 15px;
+    right: 20px;
     transform: translate(50%, -50%);
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     z-index: 2;
 }
@@ -12,37 +26,33 @@
 .menu-global {
     backface-visibility: hidden;
     position: absolute;
-    border-top: 3px solid black;
+    border-top: 3px solid #fff;
     width: 100%;
 }
 
-/* .menu-top {
-    transform: translateY(-10px);
-}
-
-.menu-bottom {
-    transform: translateY(10px);
-} */
-
 .menu {
     display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #450e0e;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 10%;
-    margin-top: 0;
     overflow: hidden;
+    height: 100vh;
+    width: 50vw;
+    transform: translateX(100%);
+    transition: transform 1s ease;
 }
 
 .menu p {
     margin: 15px;
-    font-size: 60px;
+    font-size: 50px;
     font-family: "Playfair Display", serif;
     font-weight: 200;
-    transform: translateX(-250%); 
-    transition: transform 0.5s ease;
 }
 
-.menu p.animate {
+.menu.animate {
     transform: translateX(0%);
 }
 
@@ -51,18 +61,6 @@
     mix-blend-mode: difference;
 }
 
-.menu img {
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    transform: translateY(-200%); 
-    transition: transform 0.8s ease;
-}
-
-.menu img.animate {
-    transform: translateY(0%); 
-} 
 
 .effect-underline:after {
     content: '';
@@ -87,18 +85,17 @@
 }
 
 .insta {
-    position: fixed;
-    top: 95px;
-    right: 70px;
     transform: translate(-50%, -50%);
-    width: 35px;
-    height: 35px;
+    margin-top: 35px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     z-index: 2;
 }
 
 .insta svg path {
-    fill: black;
+    fill: #fff;
 }
 
 .insta svg:hover path {
@@ -205,14 +202,4 @@
     pointer-events: none;
     transition: transform 0.15s ease;
     transform: scale(1);
-}
-
-footer {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Noto Serif", serif;
-    font-size: 13px;
-    color: rgb(116, 116, 116);
 }
