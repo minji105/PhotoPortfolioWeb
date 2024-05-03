@@ -34,6 +34,7 @@
 // menu icon
 
 const menuContainer = document.getElementById('menu-container');
+const bottom_bar = document.getElementsByClassName('bottom-bar')[0];
 
 const blur_effect = document.getElementsByClassName('blur')[0];
 
@@ -63,6 +64,9 @@ menuIcon.addEventListener('click', function () {
         blur_effect.style.transition = 'opacity 1s ease';
         menuContainer.style.display = 'flex';
 
+        bottom_bar.style.transform = 'translateY(100px)';
+        bottom_bar.style.transition = 'transform 1s ease';
+
         setTimeout(() => {
             menuContainer.classList.add('animate');
 
@@ -81,6 +85,9 @@ menuIcon.addEventListener('click', function () {
         menu_bottom.style.transform = '';
 
         menuContainer.classList.remove('animate');
+
+        bottom_bar.style.transform = 'translateY(0)';
+        bottom_bar.style.transition = 'transform 1s ease';
 
         setTimeout(() => {
             blur_effect.style.opacity = '0';

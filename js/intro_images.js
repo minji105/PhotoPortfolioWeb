@@ -55,8 +55,8 @@ function goToSection(index, direction) {
   isAnimating = true;
 
   const currentProject = projects[index];
-  const projCount = document.querySelector(".proj-count");
-  const projName = document.querySelector(".proj-name");
+  const projCount = document.querySelector("#proj-count");
+  const projName = document.querySelector("#proj-name");
   projCount.textContent = currentProject.count;
   projName.textContent = currentProject.name;
 
@@ -89,7 +89,7 @@ firstSection.style.display = "block";
 
 // 초기 프로젝트 정보 설정
 const initialProject = projects[0];
-const projCount = document.querySelector(".proj-count");
-const projName = document.querySelector(".proj-name");
+const projCount = document.querySelector("#proj-count");
+const projName = document.querySelector("#proj-name");
 projCount.textContent = initialProject.count;
 projName.textContent = initialProject.name;
