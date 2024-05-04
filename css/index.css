@@ -52,36 +52,6 @@ a {
     }
 }
 
-/* .shutter-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    animation: shutter 1s forwards;
-    opacity: 0;
-    animation-delay: 1s;
-    z-index: 1;
-}
-
-@keyframes shutter {
-    0% {
-        opacity: 0.5;
-    }
-
-    30% {
-        opacity: 0.1;
-    }
-
-    60% {
-        opacity: 0.3;
-    }
-
-    100% {
-        opacity: 0;
-    }
-} */
-
 #name {
     white-space: nowrap;
     position: fixed;

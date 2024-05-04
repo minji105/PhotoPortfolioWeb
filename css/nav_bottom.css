@@ -147,6 +147,6 @@ nav span:first-child {
 
 .bottom-bar div {
     display: flex;
-    width: 61%;
+    width: 55%;
     justify-content: space-between;
 }
