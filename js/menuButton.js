@@ -34,9 +34,6 @@
 // menu icon
 
 const menuContainer = document.getElementById('menu-container');
-const bottom_bar = document.getElementsByClassName('bottom-bar')[0];
-
-const blur_effect = document.getElementsByClassName('blur')[0];
 
 const menuIcon = document.getElementsByClassName('menu-icon')[0];
 const menu_top = document.getElementsByClassName('menu-top')[0];
@@ -60,12 +57,7 @@ menuIcon.addEventListener('click', function () {
         menu_bottom.style.transform = 'rotate(135deg)';
         menu_bottom.style.transition = '0.5s';
 
-        blur_effect.style.opacity = '1';
-        blur_effect.style.transition = 'opacity 1s ease';
-        menuContainer.style.display = 'flex';
-
-        bottom_bar.style.transform = 'translateY(100px)';
-        bottom_bar.style.transition = 'transform 1s ease';
+        menuContainer.style.display = 'grid';
 
         setTimeout(() => {
             menuContainer.classList.add('animate');
@@ -86,12 +78,7 @@ menuIcon.addEventListener('click', function () {
 
         menuContainer.classList.remove('animate');
 
-        bottom_bar.style.transform = 'translateY(0)';
-        bottom_bar.style.transition = 'transform 1s ease';
-
         setTimeout(() => {
-            blur_effect.style.opacity = '0';
-            blur_effect.style.transition = 'opacity 1s ease';
 
             setTimeout(() => {
                 menuContainer.style.display = 'none';

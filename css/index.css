@@ -58,7 +58,7 @@ a {
     color: #ffffff;
     mix-blend-mode: difference;
     top: 50px;
-    left: 20px;
+    margin-left: 2.5vw;
     font-family: "Archivo Black", sans-serif;
     font-weight: 900;
     font-size: 14vh;
@@ -68,11 +68,11 @@ a {
 }
 
 @keyframes moveUpName {
-    0% {
+    from {
         top: 100%;
     }
 
-    30%, 70% {
+    33%, 66% {
         top: 65%;
     }
 
