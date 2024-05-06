@@ -13,11 +13,11 @@ const projects = [
 ];
 
 const projectUrls = [
-  "proj1.html",
-  "proj2.html",
-  "proj3.html",
-  "proj4.html",
-  "proj5.html" 
+  "project1.html",
+  "project2.html",
+  "project3.html",
+  "project4.html",
+  "project5.html" 
 ];
 
 const projViewLink = document.querySelector(".proj-view");

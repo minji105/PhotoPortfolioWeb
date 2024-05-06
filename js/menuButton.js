@@ -39,9 +39,12 @@ const menuIcon = document.getElementsByClassName('menu-icon')[0];
 const menu_top = document.getElementsByClassName('menu-top')[0];
 const menu_middle = document.getElementsByClassName('menu-middle')[0];
 const menu_bottom = document.getElementsByClassName('menu-bottom')[0];
+const menu_global = document.querySelectorAll('.menu-global');
 
 const menuItems = document.querySelectorAll('#menu-container p');
 const menuImg = document.getElementById('menu-img');
+
+const nav = document.querySelector('nav span');
 
 let isOpen = false
 
@@ -57,11 +60,16 @@ menuIcon.addEventListener('click', function () {
         menu_bottom.style.transform = 'rotate(135deg)';
         menu_bottom.style.transition = '0.5s';
 
+        menu_global.forEach((menu,index)=>{
+            menu.style.borderTop='2px solid #000';
+        })
+
         menuContainer.style.display = 'grid';
 
         setTimeout(() => {
             menuContainer.classList.add('animate');
 
+            nav.style.opacity='0';
             // mainContainer.style.display = 'none';
             // footerContainer.style.display = 'none';
 
@@ -76,13 +84,19 @@ menuIcon.addEventListener('click', function () {
         menu_middle.style.opacity = '1';
         menu_bottom.style.transform = '';
 
+        menu_global.forEach((menu,index)=>{
+            menu.style.borderTop='2px solid #fff';
+        })
+
         menuContainer.classList.remove('animate');
 
         setTimeout(() => {
 
             setTimeout(() => {
                 menuContainer.style.display = 'none';
-            }, 500);
+            
+        nav.style.opacity='1';
+            }, 300);
 
         }, 300);
     }

@@ -16,7 +16,22 @@ a {
     color: inherit;
 }
 
-
+#name {
+    white-space: nowrap;
+    position: fixed;
+    color: #ffffff;
+    mix-blend-mode: difference;
+    top: -3%;
+    left: -1%;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    font-size: 11vw;
+    line-height: 0.9em;
+    letter-spacing: -10px;
+    transform: translateY(-100%);
+    animation: nav-effect 1s ease forwards;
+    z-index: 1;
+}
 
 /* .change-mode {
     animation: expanding 4s infinite;
@@ -41,7 +56,7 @@ a {
 .intro {
     height: 100vh;
     animation: moveUpIntro 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
     transform: translateY(100%);
     position: fixed;
 }
@@ -49,35 +64,6 @@ a {
 @keyframes moveUpIntro {
     to {
         transform: translateY(0%);
-    }
-}
-
-#name {
-    white-space: nowrap;
-    position: fixed;
-    color: #ffffff;
-    mix-blend-mode: difference;
-    top: 50px;
-    margin-left: 2.5vw;
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 900;
-    font-size: 14vh;
-    line-height: 1em;
-    animation: moveUpName 3s ease forwards;
-    z-index: 1;
-}
-
-@keyframes moveUpName {
-    from {
-        top: 100%;
-    }
-
-    33%, 66% {
-        top: 65%;
-    }
-
-    100% {
-        top: 50px;
     }
 }
 
@@ -141,4 +127,80 @@ section {
 
 .proj-view {
     cursor: pointer;
+}
+
+nav {
+    height: 60px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 105;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    color: #fff;
+    font-family: "Archivo Black", sans-serif;
+    transform: translateY(-100%);
+    animation: nav-effect 1s ease forwards;
+}
+nav span {
+    grid-column: 11;
+    text-align: center;
+}
+nav div {
+    grid-column: 21;
+}
+
+@keyframes nav-effect {
+    to {
+        transform: translateY(0%);
+    }
+}
+
+
+.bottom-bar {
+    color: #fff;
+    position: fixed;
+    bottom: 3%;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 95vw;
+    margin-left: 2.5vw;
+    z-index: 90;
+    animation: moveUpBottomBar 1s ease forwards;
+}
+
+.bottom-bar #proj-name {
+    grid-column: 3;
+    text-align: center;
+}
+
+.bottom-bar .proj-view {
+    grid-column: 5/7;
+    text-align: center;
+}
+
+.bottom-bar .scroll {
+    grid-column: 10;
+    text-align: right;
+}
+
+.bottom-bar .copyright {
+    grid-column: 2/10;
+    text-align: center;
+}
+
+@keyframes moveUpBottomBar {
+    from {
+        bottom: -10%;
+    }
+
+    to {
+        bottom: 3%;
+    }
 }
