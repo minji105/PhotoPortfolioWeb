@@ -6,7 +6,7 @@ let lastScrollTop = 0;
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
         if ((Math.abs(currentScroll - lastScrollTop) > scrollThresholdHide) && (currentScroll > lastScrollTop)) {
-            document.querySelector("nav").style.transform = "translateY(-100%)";
+            document.querySelector("nav").style.transform = "translateY(-200%)";
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         } else if ((currentScroll - lastScrollTop) < -scrollThresholdShow) {
             document.querySelector("nav").style.transform = "translateY(0)";

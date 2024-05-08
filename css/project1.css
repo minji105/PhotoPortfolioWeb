@@ -14,9 +14,87 @@ a {
 
 nav {
     position: fixed;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(30px);
+    width: 96vw;
+    top: 15px;
+    margin-left: 2vw;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.5s ease;
+    animation: nav-effect 1s ease forwards;
+    z-index: 10;
+}
+
+@keyframes nav-effect {
+    from {
+        top: -10%;
+    }
+
+    to {
+        top: 15px;
+    }
+}
+
+.project-buttons {
+    display: flex;
+    gap: 2vw;
+}
+
+.hover-button {
+    color: #a0a0a0;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.hover-button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scale(0);
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-button:hover,
+.now {
+    transform: scale(1.1);
+    color: #000;
+    transition: all 0.25s ease;
+}
+
+.hover-button:hover::after,
+.now::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+@keyframes expand {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* nav {
+    position: fixed;
     width: 98vw;
     background-color: rgb(245, 245, 245);
-    font-family: "Archivo Black", sans-serif;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -45,7 +123,7 @@ nav div span:nth-child(2) {
 nav div span:nth-child(3),
 nav div div {
     grid-column: 21;
-}
+} */
 
 .main {
     position: relative;
@@ -57,9 +135,9 @@ nav div div {
     font-family: "Archivo Black", sans-serif;
     display: grid;
     grid-template-areas: 'name .'
-                        'img1 img2'
-                        '. date';
-    grid-template-columns: repeat(2,1fr);
+        'img1 img2'
+        '. date';
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 60vh auto;
     column-gap: 20px;
     row-gap: 8px;
@@ -73,9 +151,11 @@ nav div div {
 .img1 {
     grid-area: img1;
 }
+
 .img2 {
     grid-area: img2;
 }
+
 .main img {
     width: 100%;
     height: 100%;
@@ -91,7 +171,7 @@ nav div div {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
-    
+
 }
 
 .detail {
@@ -105,7 +185,7 @@ nav div div {
 .grid-view {
     display: none;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    grid-template-rows: repeat(auto-fit,28px);
+    grid-template-rows: repeat(auto-fit, 28px);
     grid-gap: 28px;
 }
 
@@ -137,8 +217,8 @@ nav div div {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 #img-modal .modal-content {

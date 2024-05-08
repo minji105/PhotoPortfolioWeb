@@ -16,42 +16,31 @@ a {
     color: inherit;
 }
 
-#name {
+.name {
     white-space: nowrap;
     position: fixed;
     color: #ffffff;
     mix-blend-mode: difference;
-    top: -3%;
-    left: -1%;
+    left: -9px;
     font-family: "Archivo Black", sans-serif;
     font-weight: 900;
-    font-size: 11vw;
+    font-size: 8vw;
     line-height: 0.9em;
     letter-spacing: -10px;
-    transform: translateY(-100%);
-    animation: nav-effect 1s ease forwards;
+    animation: name-effect 1s ease forwards;
     z-index: 1;
 }
 
-/* .change-mode {
-    animation: expanding 4s infinite;
-    font-size: 20px;
-} */
 
-/* @keyframes expanding {
+@keyframes name-effect {
     from {
-        font-weight: 200;
-    }
-
-    50% {
-        font-weight: 900;
+        top: -50%;
     }
 
     to {
-        font-weight: 200;
+        top: -17px;
     }
-} */
-
+}
 
 .intro {
     height: 100vh;
@@ -130,10 +119,10 @@ section {
 }
 
 nav {
-    height: 60px;
+    /* height: 22px; */
     width: 100vw;
     position: fixed;
-    top: 0;
+    top: 3%;
     left: 0;
     z-index: 105;
     display: grid;
@@ -143,20 +132,52 @@ nav {
     justify-items: center;
     color: #fff;
     font-family: "Archivo Black", sans-serif;
-    transform: translateY(-100%);
     animation: nav-effect 1s ease forwards;
 }
-nav span {
-    grid-column: 11;
-    text-align: center;
+
+.contact {
+    grid-column: 10/13;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
-nav div {
+
+.contact div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.contact .clone * {
+    transform: translateY(60px);
+}
+
+.contact:hover .clone * {
+    transform: translateY(0px);
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.contact:hover .text * {
+    transform: translateY(-60px);
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+nav div:last-child {
     grid-column: 21;
 }
 
 @keyframes nav-effect {
+    from {
+        top: -10%;
+    }
+
     to {
-        transform: translateY(0%);
+        top: 3%;
     }
 }
 
@@ -180,19 +201,9 @@ nav div {
     text-align: center;
 }
 
-.bottom-bar .proj-view {
-    grid-column: 5/7;
-    text-align: center;
-}
-
 .bottom-bar .scroll {
     grid-column: 10;
     text-align: right;
-}
-
-.bottom-bar .copyright {
-    grid-column: 2/10;
-    text-align: center;
 }
 
 @keyframes moveUpBottomBar {
@@ -203,4 +214,52 @@ nav div {
     to {
         bottom: 3%;
     }
+}
+
+.proj-view div {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+}
+
+.proj-view div span {
+    margin-right: 5px;
+}
+
+.proj-view div span:last-child {
+    margin-right: 0;
+}
+
+.proj-view .text *,
+.proj-view .clone * {
+    transition: 0.2s;
+}
+
+.proj-view .clone * {
+    transform: translateY(60px);
+}
+
+.proj-view:hover .clone * {
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.proj-view:hover .text * {
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.proj-view:hover .clone span:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+.proj-view:hover .clone span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.proj-view:hover .clone span:nth-child(3) {
+    transition-delay: 0.25s;
 }

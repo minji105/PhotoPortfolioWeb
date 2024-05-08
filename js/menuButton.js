@@ -44,7 +44,7 @@ const menu_global = document.querySelectorAll('.menu-global');
 const menuItems = document.querySelectorAll('#menu-container p');
 const menuImg = document.getElementById('menu-img');
 
-const nav = document.querySelector('nav span');
+const contact = document.getElementsByClassName('contact')[0];
 
 let isOpen = false
 
@@ -60,8 +60,8 @@ menuIcon.addEventListener('click', function () {
         menu_bottom.style.transform = 'rotate(135deg)';
         menu_bottom.style.transition = '0.5s';
 
-        menu_global.forEach((menu,index)=>{
-            menu.style.borderTop='2px solid #000';
+        menu_global.forEach((menu, index) => {
+            menu.style.borderTop = '2px solid #000';
         })
 
         menuContainer.style.display = 'grid';
@@ -69,7 +69,7 @@ menuIcon.addEventListener('click', function () {
         setTimeout(() => {
             menuContainer.classList.add('animate');
 
-            nav.style.opacity='0';
+            contact.style.opacity = '0';
             // mainContainer.style.display = 'none';
             // footerContainer.style.display = 'none';
 
@@ -84,8 +84,8 @@ menuIcon.addEventListener('click', function () {
         menu_middle.style.opacity = '1';
         menu_bottom.style.transform = '';
 
-        menu_global.forEach((menu,index)=>{
-            menu.style.borderTop='2px solid #fff';
+        menu_global.forEach((menu, index) => {
+            menu.style.borderTop = '2px solid #fff';
         })
 
         menuContainer.classList.remove('animate');
@@ -94,8 +94,7 @@ menuIcon.addEventListener('click', function () {
 
             setTimeout(() => {
                 menuContainer.style.display = 'none';
-            
-        nav.style.opacity='1';
+                contact.style.opacity = '1';
             }, 300);
 
         }, 300);
